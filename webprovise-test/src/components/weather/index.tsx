@@ -29,7 +29,7 @@ const WeatherSection = () => {
         }
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [settings?.dayChosen]);
+    }, [settings?.dayChosen]); // just need to check when choosing a day in list
 
     const changeTempDisplay = (mode: string) => {
         setSettings({ ...settings, temperature: mode })
@@ -52,10 +52,10 @@ const WeatherSection = () => {
             />
             <div className="grid grid-cols-4 xs:grid-cols-8">
                 {weatherData?.daily?.map((_, index) =>
-                // the list not have any shuffle case, so can pass the index as a key
                 {
                     const { temp, weather, dt } = weatherData?.daily[index] || {};
                     return (
+                        // the list will not suffle and edit, so can pass the index as a key
                         <div key={index}
                             className={twJoin(settings?.dayChosen === index ? "bg-wp-gray-f7 gradient-border" : "border-wp-96", "border duration-200 ease-in-out  flex-1 cursor-pointer hover:bg-wp-gray-f7")}
                             onClick={() => onChooseCard(index)}>
