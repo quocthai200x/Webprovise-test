@@ -1,37 +1,31 @@
 import { atom } from "recoil";
+import { DayWeather, Location } from "../types";
 
-export const locationState = atom({
+export const locationState = atom<Location>({
     key: "WeatherLocation",
     default: {
-        country: '',
-        city: '',
-        lat: 0,
-        lon: 0
-    }
+        country: undefined,
+        city: undefined,
+        lat: undefined,
+        lon: undefined
+    } 
 })
 
-export const currentWeatherState = atom({
+export const currentWeatherState = atom<DayWeather>({
     key: "CurrentWeatherState",
     default: {
-        dt: 0,
-        sunrise: 0,
-        sunset: 0,
-        temp: 0,
-        feels_like: 0,
-        pressure: 0,
-        humidity: 0,
-        dew_point: 0,
-        uvi: 0,
-        clouds: 0,
-        visibility: 0,
-        wind_speed: 0,
-        wind_deg: 0,
-        wind_gust: 0,
+        air_quality: undefined,
+        dt: undefined,
+        temp: undefined,
+        humidity: undefined,
+        wind_speed: undefined,
+        wind_deg: undefined,
+        wind_gust: undefined,
         weather: [{
-            id: 0,
-            main: '',
-            description: '',
-            icon: '',
+            id: undefined,
+            main: undefined,
+            description: undefined,
+            icon: undefined,
         }]
     }
 })

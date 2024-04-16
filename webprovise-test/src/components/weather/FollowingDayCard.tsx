@@ -1,30 +1,39 @@
 import { useMemo } from "react";
-import { convertFahrenheitToCelsius, convertTimestampToShortDayName } from "../../utils";
+import { convertKelvinToCelsius, convertKelvinToFahrenheit, convertTimestampToShortDayName } from "../../utils";
 import { userSettingsState } from "../../store/settings";
 import { useRecoilValue } from "recoil";
 import { typeTemputure } from "../../constant";
 
-type WeatherAddtionalDayCardProps = {
-    min: number;
-    max: number;
-    icon: string;
-    dt: number;
+type FollowingDayCardProps = {
+    min?: number;
+    max?: number;
+    icon?: string;
+    dt?: number;
 }
 
-const WeatherAddtionalDayCard = (props: WeatherAddtionalDayCardProps) => {
-    const { min: fahrenheitMin, max: fahrenheitMax, icon, dt } = props
+const FollowingDayCard = (props: FollowingDayCardProps) => {
+    const { min: kelvinMin, max: kelvinMax, icon, dt } = props
     const { temperature } = useRecoilValue(userSettingsState);
     const isFTemp = (temperature === typeTemputure.F);
 
     const celsiusMin = useMemo(() => {
-        return convertFahrenheitToCelsius(fahrenheitMin)
-    }, [fahrenheitMin])
+        return convertKelvinToCelsius(kelvinMin!)
+    }, [kelvinMin])
 
     const celsiusMax = useMemo(() => {
-        return convertFahrenheitToCelsius(fahrenheitMax)
-    }, [fahrenheitMax])
+        return convertKelvinToCelsius(kelvinMax!)
+    }, [kelvinMax])
 
-    const shortNameDay = useMemo(() => { return convertTimestampToShortDayName(dt) }, [dt])
+    const fahrenheitMin = useMemo(() => {
+        return convertKelvinToFahrenheit(kelvinMin!)
+    }, [kelvinMin])
+
+    const fahrenheitMax = useMemo(() => {
+        return convertKelvinToFahrenheit(kelvinMax!)
+    }, [kelvinMax])
+
+    const shortNameDay = useMemo(() => { return convertTimestampToShortDayName(dt!) }, [dt])
+
     return (
         <div className="flex flex-col items-center py-5 gap-1 w-full">
             <span className="font-bold text-wp-14 leading-wp-14">{shortNameDay}</span>
@@ -35,4 +44,4 @@ const WeatherAddtionalDayCard = (props: WeatherAddtionalDayCardProps) => {
     )
 }
 
-export default WeatherAddtionalDayCard;
+export default FollowingDayCard;

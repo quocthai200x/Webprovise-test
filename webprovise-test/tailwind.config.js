@@ -7,10 +7,14 @@ export default {
     ],
     theme: {
         extend: {
-            backgroundColor: {     
+            screens: {
+                'xs': '412px',
+            },
+
+            backgroundColor: {
                 "wp-gray-f7": "#f7f7f7",
             },
-            textColor:{
+            textColor: {
                 'wp-gray-666': '#666666',
             },
             fontSize: {
@@ -27,10 +31,10 @@ export default {
             },
             boxShadow: {
                 'wp-251': '0 1px 1px #00000025',
-                'wp-252': '0 2px 2px #00000025',
+                'wp-252': '0 2px 2px rgba(0, 0, 0, 0.25)',
             },
             borderColor: {
-                'wp-96': '#96969630'
+                'wp-96': 'rgba(150, 150, 150, 0.3)'
             }
             ,
         },
