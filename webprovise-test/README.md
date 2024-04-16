@@ -1,30 +1,41 @@
-# React + TypeScript + Vite
+# Project Name
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Description
+[Provide a brief description of your project here.]
 
-Currently, two official plugins are available:
+## Getting Started
+Follow these steps to set up and run the project locally.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### Prerequisites
+- Node.js installed on your machine
+- Yarn package manager installed (you can also use npm if you prefer)
 
-## Expanding the ESLint configuration
+### Installation
+1. Clone the repository to your local machine.
+2. Navigate to the project directory.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### Setting up Environment Variables
+1. Create a `.env` file at the root of the project.
+2. Add the following key-value pair to the `.env` file: VITE_WEATHER_API_KEY=your_api_key
+Replace `your_api_key` with your actual weather API key.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+### Install Dependencies
+Run the following command to install project dependencies:
 ```
+yarn
+```
+This will install all necessary packages based on the `package.json` file.
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Running the Project
+Once the dependencies are installed and the environment variable is set up, you can run the project locally.
+Use the following command: 
+```
+yarn dev
+```
+This will start the project in development mode.
+
+### Accessing the Application
+Once the project is running, you can access it in your web browser by navigating to: http://localhost:5173
+
+
+
