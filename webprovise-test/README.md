@@ -16,7 +16,10 @@ Follow these steps to set up and run the project locally.
 
 ### Setting up Environment Variables
 1. Create a `.env` file at the root of the project.
-2. Add the following key-value pair to the `.env` file: VITE_WEATHER_API_KEY=your_api_key
+2. Add the following key-value pair to the `.env` file: 
+```
+VITE_WEATHER_API_KEY=your_api_key
+```
 Replace `your_api_key` with your actual weather API key.
 
 ### Install Dependencies
